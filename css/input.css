@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式 */
+/* 本地Google Fonts引用 */
+@import url('../fonts/google-fonts.css');
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* 渐变文字 */
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 卡片悬停效果 */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 视频容器 */
+.video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 16:9 宽高比 */
+    overflow: hidden;
+    border-radius: 8px;
+
+}
+
+.video-container iframe {
+    position: relative;
+    width: 1600px;
+    height: 950px;
+    max-width: none;
+    transform-origin: top left;
+}
+
+/* 复制提示动画 */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(10px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.toast {
+    animation: fadeInOut 2s ease-in-out forwards;
+}
+
+/* 锚点跳转偏移，避免内容被导航栏遮挡 */
+#contact, #works {
+    scroll-margin-top: 80px;
+}
