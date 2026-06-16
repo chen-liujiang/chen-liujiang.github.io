@@ -1,0 +1,8 @@
+# 允许搜索引擎访问网站
+User-agent: *
+Allow: /
+
+# 阻止搜索引擎索引抖音视频 iframe 内容
+# 抖音播放器域名
+User-agent: *
+Disallow: /open.douyin.com/
